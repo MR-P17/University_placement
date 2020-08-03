@@ -59,7 +59,7 @@ router.post('/register',function(req,res){
 		User.getUserByEmail(email, function(err, user){
 			if(err) throw err;
 			if(user){
-				console.log(user);
+				// console.log(user);
 				console.log("user already Exist");
 				req.flash('error_msg', 'The Email Id is already registered');
 				res.redirect('/');
@@ -74,7 +74,7 @@ router.post('/register',function(req,res){
 
 				User.createUser(newUser,function(err,user){
 					if(err) throw err;
-					console.log(user);
+					// console.log(user);
 				});
 				console.log('registered');
 				req.flash('success_msg','Registration Successfull: Now you can login to your account');
